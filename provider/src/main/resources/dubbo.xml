@@ -6,5 +6,7 @@
     <dubbo:application name="provider" />
     <dubbo:registry address="zookeeper://192.168.99.100:2181" />
     <dubbo:protocol name="dubbo" port="20880" />
-    <dubbo:service interface="com.example.provider.GreetingService" ref="greetingsServiceImpl" />
+
+    <dubbo:service interface="com.example.api.GreetingService" ref="greetingsServiceImpl" />
+    <dubbo:service interface="com.example.api.AsyncGreetingService" ref="asyncGreetingServiceImpl" />
 </beans>

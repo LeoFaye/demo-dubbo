@@ -1,6 +1,6 @@
 package com.example.provider;
 
-
+import com.example.api.GreetingService;
 import org.springframework.stereotype.Service;
 
 @Service
