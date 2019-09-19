@@ -5,8 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
     <dubbo:application name="provider" />
     <dubbo:registry address="zookeeper://192.168.99.100:2181" />
-    <dubbo:protocol name="dubbo" port="20880" />
+    <!--<dubbo:protocol name="dubbo" port="20880" />-->
 
     <dubbo:service interface="com.example.api.GreetingService" ref="greetingsServiceImpl" />
     <dubbo:service interface="com.example.api.AsyncGreetingService" ref="asyncGreetingServiceImpl" />
+
+    <!-- default times is 2 -->
+    <dubbo:service interface="com.example.api.clusterfailure.FailOverService" ref="failOverServiceImpl" retries="1" />
+    <dubbo:service interface="com.example.api.clusterfailure.FailFastService" ref="failFastServiceImpl" cluster="failfast" />
 </beans>

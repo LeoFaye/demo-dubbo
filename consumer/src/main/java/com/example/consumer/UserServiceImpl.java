@@ -3,7 +3,6 @@ package com.example.consumer;
 import com.example.api.AsyncGreetingService;
 import com.example.api.GreetingService;
 import org.apache.dubbo.config.annotation.Reference;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;
@@ -36,4 +35,5 @@ public class UserServiceImpl implements UserService {
         });
         System.out.println("method end.");
     }
+
 }
